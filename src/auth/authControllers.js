@@ -59,6 +59,7 @@ export async function login(req, res) {
       process.env.JWT_SECRET,
       { expiresIn: "1h" }
     );
-    res.status(201).json({ token });
+
+    res.cookies("token",token).status(201).json({ token });
   } catch {}
 }
