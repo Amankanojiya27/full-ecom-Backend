@@ -19,10 +19,10 @@ const userShema = new Schema(
       select: false,
       min: [8, "Password must be at least 8 characters long"],
       max: [50, "Password must be at most 50 characters long"],
-      match: [
-        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,
-        "Password must contain at least 8 characters, one uppercase letter, one lowercase letter and one number",
-      ],
+      // match: [
+      //   /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,
+      //   "Password must contain at least 8 characters, one uppercase letter, one lowercase letter and one number",
+      // ],
     },
     role: {
       type: String,
@@ -32,5 +32,5 @@ const userShema = new Schema(
   },
   { timestamps: true }
 );
-const User = model("User", userShema, "users");
+const User = model("User", userShema,);
 export default User;

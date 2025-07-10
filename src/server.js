@@ -18,6 +18,6 @@ app.use("/user",userRoute);
 // Start the server
 const PORT = process.env.PORT || 3001;
 app.listen(PORT,()=>{
-    console.log(`Server is running at port http://localhost:${PORT}`)
+    console.log(`✅ Server is running at port http://localhost:${PORT}`)
 })
 
