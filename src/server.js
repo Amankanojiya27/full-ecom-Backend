@@ -14,7 +14,7 @@ connectToDB();
 
 //Routes
 app.use("/api/auth",authRoute);
-app.use("/api/users",userRouter)
+app.use("/api",userRouter)
 
 
 // Start the server
