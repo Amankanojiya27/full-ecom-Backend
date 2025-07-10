@@ -3,6 +3,7 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
 export async function register(req, res) {
+  console.log("Body", req.body);
   try {
     const { userName, email, password, role } = req.body;
     if (!email || !password || !userName) {
@@ -18,7 +19,12 @@ export async function register(req, res) {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    const newUser = new User({ userName, email, hashedPassword, role });
+    const newUser = new User({
+      userName,
+      email,
+      password: hashedPassword,
+      role,
+    });
     await newUser.save();
     res
       .status(201)
@@ -35,6 +41,7 @@ export async function login(req, res) {
     const { email, password } = req.body;
 
     const user = await User.findOne({ email });
+
     if (!user) {
       return res.status(404).json({
         message: `User with Email - ${email} not found!`,

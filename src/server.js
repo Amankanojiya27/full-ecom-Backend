@@ -3,7 +3,8 @@ import dotenv from "dotenv";
 dotenv.config();
 import express from "express";
 import connectToDB from "./config/db.js";
-import userRoute from "./auth/authRoutes.js"
+import authRoute from "./auth/authRoutes.js"
+import userRouter from "./user/userRoutes.js"
 
 const app = express();
 
@@ -12,7 +13,8 @@ app.use(express.json());
 connectToDB();
 
 //Routes
-app.use("/user",userRoute);
+app.use("/api/auth",authRoute);
+app.use("/api/users",userRouter)
 
 
 // Start the server

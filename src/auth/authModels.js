@@ -16,9 +16,8 @@ const userShema = new Schema(
     },
     password: {
       type: String,
-      select: false,
       min: [8, "Password must be at least 8 characters long"],
-      max: [50, "Password must be at most 50 characters long"],
+      max: [20, "Password must be at most 50 characters long"],
       // match: [
       //   /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,
       //   "Password must contain at least 8 characters, one uppercase letter, one lowercase letter and one number",
