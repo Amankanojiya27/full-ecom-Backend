@@ -6,6 +6,8 @@ import connectToDB from "./config/db.js";
 import authRoute from "./auth/authRoutes.js"
 import userRouter from "./user/userRoutes.js"
 import cookieParser from "cookie-parser";
+import gemini from "./gemini/geminiRoute.js"
+
 
 const app = express();
 
@@ -27,6 +29,10 @@ app.get("/", (req,res)=>{
 //Routes
 app.use("/api/auth",authRoute);
 app.use("/api",userRouter)
+app.use("/gemini",gemini)
+
+
+
 
 
 // Start the server
