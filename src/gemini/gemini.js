@@ -3,7 +3,7 @@
 // import { GoogleGenAI } from '@google/genai';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import dotenv from "dotenv";
-import say from "say";
+// import say from "say";
 
 dotenv.config();
 
